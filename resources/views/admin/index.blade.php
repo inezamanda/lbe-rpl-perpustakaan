@@ -1,5 +1,8 @@
-@extends('layouts.app')
-
+@extends('admin.app')
+@section('title', 'Dashboard - Library App')
 @section('content')
-    <h1>INI TAMPILAN UNTUK ADMIN</h1>
+    <h2 class="text-uppercase mb-4">Dashboard</h2>
+    <div class="row justify-content-center">
+        <p>Selamat Datang</p>
+    </div>
 @endsection
