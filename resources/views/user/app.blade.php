@@ -50,7 +50,7 @@
     <hr class="divider my-1">
     <h6 class="font-weight-bold text-center mt-2">User Page</h6>
     <div class="option">
-      <a href="{{ url('/user') }}" class="{{ (request()->is('user')) ? 'active' : '' }}" id="book-tracker">
+      <a href="{{ url('/user/index/') }}" class="{{ (request()->is('user/index/*')) ? 'active' : '' }}" id="book-tracker">
         <span>Dashboard</span>
         <img src="{{ asset('img/menu_5.png') }}">
       </a>
@@ -61,11 +61,11 @@
       </a>
 
     </div>
-    <a class="nav-link logout mx auto" href="" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i> {{ __('Logout') }}</a>
-    <form id="logout-form" action="" method="POST" style="display: none;">
+      <a class="nav-link logout mx auto" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i> {{ __('Logout') }}</a>
+      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
       @csrf
-    </form>
-  </div>
+       </form>
+    </div>
   
   <!--Main Container-->
   <div class="main-container">

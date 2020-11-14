@@ -21,3 +21,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin/index', 'HomeController@dashboardAdmin')->middleware('onlyAdmin');
 Route::get('/user/index', 'HomeController@dashboardUser')->middleware('onlyOrdinaryUser');
 Route::get('/notfound/index', 'HomeController@NotFoundPage')->name('notfound');
+Route::get('/admin/catalog', 'HomeController@catalogAdmin')->middleware('onlyAdmin');
+Route::get('/user/catalog', 'HomeController@catalogUser')->middleware('onlyOrdinaryUser');
+Route::get('/admin/member', 'HomeController@memberAdmin')->middleware('onlyAdmin');

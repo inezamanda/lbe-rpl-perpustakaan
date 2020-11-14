@@ -80,9 +80,9 @@
                   <h1 class="text-uppercase text-white font-weight-bold">Book Library</h1>
                   <hr class="divider my-5" />
               </div>
-              <div class="col-lg-8 align-self-baseline">
+              <a class="col-lg-8 align-self-baseline" href="{{ route('login') }}"> 
                   <button class="button"><i class="fas fa-book-reader"></i> Let's Read</button>
-              </div>
+              </a>
           </div>
       </div>
   </header>

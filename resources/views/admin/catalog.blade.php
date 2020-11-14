@@ -54,7 +54,7 @@
     <hr class="divider my-1">
     <h6 class="font-weight-bold text-center mt-2">Admin Page</h6>
     <div class="option">
-      <a href="{{ url('/admin') }}" id="book-tracker">
+      <a href="{{ url('/admin/index') }}" id="book-tracker">
           <span>Dashboard </span>
           <img src="{{ asset('img/menu_1.png') }}">
       </a>
@@ -64,20 +64,15 @@
           <img src="{{ asset('img/menu_2.png') }}">
       </a>
 
-      <a href="{{ url('/admin/transaction') }}" class="" id="transaction">
-          <span>Transaction </span>
-          <img src="{{ asset('img/menu_3.png') }}">
-      </a>
-
       <a href="{{ url('/admin/member') }}" id="member">
           <span>Member </span>
           <img src="{{ asset('img/menu_4.png') }}">
       </a>
     </div>
-    <a class="nav-link logout mx auto" href="" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i> {{ __('Logout') }}</a>
-    <form id="logout-form" action="" method="POST" style="display: none;">
+    <a class="nav-link logout mx auto" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i> {{ __('Logout') }}</a>
+      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
       @csrf
-    </form>
+      </form>
   </div>
 
   <!--Main layout-->

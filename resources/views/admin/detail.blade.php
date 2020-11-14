@@ -54,7 +54,7 @@
     <hr class="divider my-1">
     <h6 class="font-weight-bold text-center mt-2">Admin Page</h6>
     <div class="option">
-      <a href="{{ url('/admin') }}" id="book-tracker">
+      <a href="{{ url('/admin/index') }}" id="book-tracker">
           <span>Dashboard </span>
           <img src="{{ asset('img/menu_1.png') }}">
       </a>
@@ -62,11 +62,6 @@
       <a href="{{ url('/admin/catalog') }}" class="active" id="catalog">
           <span>Catalog </span>
           <img src="{{ asset('img/menu_2.png') }}">
-      </a>
-
-      <a href="{{ url('/admin/transaction') }}" class="" id="transaction">
-          <span>Transaction </span>
-          <img src="{{ asset('img/menu_3.png') }}">
       </a>
 
       <a href="{{ url('/admin/member') }}" id="member">
