@@ -28,7 +28,7 @@ Auth::routes();
 Route::group(['middleware' => 'onlyOrdinaryUser'], function () {
     Route::get('user/index', 'PerpusController@dashboardUser')->name('user.index');
     Route::get('user/catalog', 'PerpusController@catalogUser')->name('user.catalog');
-    Route::get('{id}', 'PerpusController@userShowItem')->name('user.show');
+    Route::get('{id}', 'PerpusController@userShowBook')->name('user.show');
 });
 
 // Route::group(['middleware' => 'onlyAdmin'], function () {
