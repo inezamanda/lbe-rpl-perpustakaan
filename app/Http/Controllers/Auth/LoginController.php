@@ -32,7 +32,7 @@ class LoginController extends Controller
     public function redirectTo()
     {
         if (auth()->user()->role == 'admin') {
-            return '/admin/index';
+            return '/admin';
         } else if (auth()->user()->role == 'bukan_admin') {
             return '/user/index';
         } else {
