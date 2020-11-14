@@ -24,9 +24,34 @@ class PerpusController extends Controller
         ]);
     }
 
-    public function userDashboard()
+    public function index()
     {
-        return view('home');
+      return view('home');
+    }
+
+    public function dashboardAdmin()
+    {
+        return view('admin.index');
+    }
+
+    public function dashboardUser()
+    {
+        return view('user.index');
+    }
+
+    public function catalogAdmin()
+    {
+        return view('admin.catalog');
+    }
+
+    public function catalogUser()
+    {
+        return view('user.catalog');
+    }
+
+    public function memberAdmin()
+    {
+        return view('admin.member');
     }
 
     public function displayCreateBookPage()

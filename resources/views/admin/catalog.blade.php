@@ -78,7 +78,7 @@
   <!--Main layout-->
   <main class="main-container">
     <h2 class="wow fadeIn">Catalogue</h2>
-    <a href="{{ url('/admin/catalog/create') }}" class="btn btn-amber text-center mb-4 wow fadeIn">Add new book</a>
+    <a href="{{ url('/admin/create') }}" class="btn btn-amber text-center mb-4 wow fadeIn">Add new book</a>
 
     <!--Section: Products v.3-->
     <section class="text-center mb-4">

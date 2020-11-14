@@ -1,8 +1,7 @@
 @extends('admin.app')
 @section('title', 'Dashboard - Library App')
 @section('content')
-    <a href="{{route('admin.create')}}" class="btn btn-info">ADD NEW BOOK</a>
-    @if ($status)
+    @if ($status ?? '')
         <div class="d-flex flex-wrap">
             @foreach ($books as $book)
                 <div class="d-flex">
