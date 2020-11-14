@@ -22,10 +22,7 @@
                 </span>
             @enderror
           </div>
-          <div class="form-group row">
-            <label for="birthdate"><h5>{{ __('Birthdate') }}</h5></label>
-            <input id="birthdate" type="text" class="form-control datepicker datetimepicker-input" data-toggle="datetimepicker" data-target=".datepicker" name="birthdate" required value="{{ old('birthdate') }}" autocomplete="birthdate">
-          </div>
+          
           <div class="form-group row">
             <label for="email"><h5>{{ __('E-Mail Address') }}</h5></label>
             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
@@ -50,6 +47,18 @@
             <label for="password-confirm"><h5>{{ __('Confirm Password') }}</h5></label>
             <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
           </div>
+
+          <div class="form-group row">
+            <label for="role-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Role') }}</label>
+              <div class="col-md-6">
+                <select class="custom-select form-control" required name="role">
+                  <option selected>Pilih Role</option>
+                  <option value="admin">Admin</option>
+                  <option value="bukan_admin">Bukan Admin</option>
+                </select>
+              </div>
+            </div>
+
           <div class="form-group row mb-0">
             <div class="submitForm text-center my-4">
               <button type="submit" class="button text-center">{{ __('Register') }}</button>
