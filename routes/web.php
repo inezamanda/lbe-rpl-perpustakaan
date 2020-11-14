@@ -26,9 +26,9 @@ Auth::routes();
 // Route::get('/admin/member', 'HomeController@memberAdmin')->middleware('onlyAdmin');
 
 Route::group(['middleware' => 'onlyOrdinaryUser'], function () {
-    Route::get('/user/index', 'PerpusController@dashboardUser')->name('user.index');
-    Route::get('/user/catalog', 'PerpusController@catalogUser')->name('user.catalog');
-    Route::get('/{id}', 'PerpusController@userShowItem')->name('user.show');
+    Route::get('user/index', 'PerpusController@dashboardUser')->name('user.index');
+    Route::get('user/catalog', 'PerpusController@catalogUser')->name('user.catalog');
+    Route::get('{id}', 'PerpusController@userShowItem')->name('user.show');
 });
 
 // Route::group(['middleware' => 'onlyAdmin'], function () {
@@ -51,7 +51,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'onlyAdmin'], function () {
     Route::get('delete/{id}', 'PerpusController@displayDeleteBookPage')->name('admin.deletepage');
     Route::delete('delete/{id}', 'PerpusController@deleteBook')->name('admin.delete');
 
-    Route::get('catalog/{id}', 'PerpusController@showBook')->name('admin.show');
+    Route::get('{id}', 'PerpusController@showBook')->name('admin.detail');
 });
 
 Route::get('/notfound/index', 'HomeController@NotFoundPage')->name('notfound');

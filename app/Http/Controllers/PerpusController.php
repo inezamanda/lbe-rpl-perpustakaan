@@ -98,7 +98,7 @@ class PerpusController extends Controller
     public function showBook($id)
     {
         $book = Perpus::findOrFail($id);
-        return view('admin.show',[
+        return view('admin.detail',[
             'book' => $book,
         ]);
     }

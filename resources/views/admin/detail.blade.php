@@ -102,34 +102,32 @@
           <!--Content-->
           <div class="p-4">
 
-            <p class="lead font-weight-bold">Title</p>
+            <p class="lead font-weight-bold">$book->title</p>
 
             <table class="table table-borderless table-sm table-hover">
               <tbody>
                 <tr>
                   <th scope="row">Author</th>
-                  <td>Author</td>
+                  <td>{{$book->author}}</td>
                 </tr>
                 <tr>
                   <th scope="row">Location</th>
-                  <td>Lokasi</td>
+                  <td>{{$book->location}}</td>
                 </tr>
                 <tr>
                   <th scope="row">Publisher</th>
-                  <td>Penerbit</td>
+                  <td>{{$book->publisher}}</td>
                 </tr>
                 <tr>
                   <th scope="row">Print Year</th>
-                  <td>Tahun</td>
+                  <td>{{$book->print_year}}</td>
                 </tr>
               </tbody>
             </table>
 
             <form class="d-flex justify-content-left" action="" method="POST">
-              @method('delete')
-              @csrf
-              <a href="" class="btn btn-primary btn-md my-0 p">Edit</a>
-              <button class="btn btn-danger btn-md my-0 p" type="submit">Delete</button>
+                <a href="{{route('admin.edit',['id' => $book->id])}}" class="btn btn-info btn-sm">Edit</a>
+                <a href="{{route('admin.delete',['id' => $book->id])}}" class="btn btn-danger btn-sm">Delete</a>
             </form>
 
           </div>

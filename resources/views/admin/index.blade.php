@@ -2,7 +2,6 @@
 @section('title', 'Dashboard - Library App')
 @section('content')
     @if ($status ?? '')
-        <div class="d-flex flex-wrap">
             @foreach ($books as $book)
                 <div class="d-flex">
                     <div class="card m-3" style="width: 18rem;">
@@ -18,8 +17,7 @@
                         </div>
                     </div>
                 </div>
-            @endforeach
-        </div>
+        @endforeach
     @else
     @endif
 @endsection

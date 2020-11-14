@@ -79,100 +79,34 @@
   <main class="main-container">
     <h2 class="wow fadeIn">Catalogue</h2>
     <a href="{{ url('/admin/create') }}" class="btn btn-amber text-center mb-4 wow fadeIn">Add new book</a>
-
+    @if (session('status'))
+        <div class="alert alert-success" role="alert">
+            {{ session('status') }}
+        </div>
+    @endif
     <!--Section: Products v.3-->
     <section class="text-center mb-4">
-
-      <!--Grid row-->
-      <div class="row wow fadeIn">
-        
-            
-          <!--Grid column-->
-          <div class="col-lg-3 col-md-6 mb-4">
-
-            <!--Card-->
-            <div class="card">
-
-              <!--Card image-->
-              <div class="view overlay">
-                <img src="{{ asset('img/cover/Bumi Manusia.jpg') }}" class="card-img-top px-2 pt-2" alt="Book Title">
-                <a href="">
-                  <div class="mask rgba-white-slight"></div>
-                </a>
-              </div>
-              <!--Card image-->
-
-              <!--Card content-->
-              <div class="card-body text-center">
-                <!--Category & Title-->
-                <a href="" class="grey-text">
-                  <h5>Pramoedya Ananta Toer</h5>
-                </a>
-                <h5>
-                  <strong>
-                    <a href="" class="dark-grey-text">Bumi Manusia</a>
-                  </strong>
-                </h5>
-
-              </div>
-              <!--Card content-->
-
+    @if ($status ?? '')
+    <div class="row row-cols-4 mx-4">
+      @foreach ($books as $book)
+        <div class="d-flex">
+          <div class="card m-3" style="width: 18rem;">
+           <div class="card-body">
+            <h5 class="card-title">{{$book->title}}</h5>
+              <!-- <p>{{$book->author}}</p>
+              <p>{{$book->location}}</p>
+              <p>{{$book->publisher}}</p> -->
+              <p>{{$book->print_year}}</p>
+              <a href="{{route('admin.edit',['id' => $book->id])}}" class="btn btn-info btn-sm">Edit</a>
+              a href="{{route('admin.delete',['id' => $book->id])}}" class="btn btn-danger btn-sm">Delete</a>
+              a href="{{route('admin.show',['id' => $book->id])}}" class="btn btn-warning btn-sm">Show Detail</a>
             </div>
-            <!--Card-->
-
           </div>
-          <!--Grid column-->
-
-        
-
-      </div>
-      <!--Grid row-->
-
-            <!--Grid row-->
-            <div class="row wow fadeIn">
-        
-            
-        <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4">
-
-          <!--Card-->
-          <div class="card">
-
-            <!--Card image-->
-            <div class="view overlay">
-              <img src="{{ asset('img/cover/Bumi Manusia.jpg') }}" class="card-img-top px-2 pt-2" alt="Book Title">
-              <a href="">
-                <div class="mask rgba-white-slight"></div>
-              </a>
-            </div>
-            <!--Card image-->
-
-            <!--Card content-->
-            <div class="card-body text-center">
-              <!--Category & Title-->
-              <a href="" class="grey-text">
-                <h5>Pramoedya Ananta Toer</h5>
-              </a>
-              <h5>
-                <strong>
-                  <a href="" class="dark-grey-text">Bumi Manusia</a>
-                </strong>
-              </h5>
-
-            </div>
-            <!--Card content-->
-
-          </div>
-          <!--Card-->
-
         </div>
-        <!--Grid column-->
-
-      
-
+      @endforeach
     </div>
-    <!--Grid row-->
-
+    @else
+    @endif
     </section>
     <!--Section: Products v.3-->
 

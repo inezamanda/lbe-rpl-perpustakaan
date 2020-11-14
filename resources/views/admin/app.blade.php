@@ -64,7 +64,7 @@
       <hr class="divider my-1">
       <h6 class="font-weight-bold text-center mt-2">Admin Page</h6>
       <div class="option">
-        <a href="{{ url('/admin/index/') }}" class="{{ (request()->is('admin/index/*')) ? 'active' : '' }}" id="book-tracker">
+        <a href="{{ url('/admin/index') }}" class="{{ (request()->is('admin/index')) ? 'active' : '' }}" id="book-tracker">
             <span>Dashboard </span>
             <img src="{{ asset('img/menu_1.png') }}">
         </a>

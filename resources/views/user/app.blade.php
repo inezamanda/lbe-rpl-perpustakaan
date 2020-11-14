@@ -50,7 +50,7 @@
     <hr class="divider my-1">
     <h6 class="font-weight-bold text-center mt-2">User Page</h6>
     <div class="option">
-      <a href="{{ url('/user/index/') }}" class="{{ (request()->is('user/index/*')) ? 'active' : '' }}" id="book-tracker">
+      <a href="{{ url('/user/index') }}" class="{{ (request()->is('user/index/*')) ? 'active' : '' }}" id="book-tracker">
         <span>Dashboard</span>
         <img src="{{ asset('img/menu_5.png') }}">
       </a>
