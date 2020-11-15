@@ -3,7 +3,7 @@
 @section('content')
   <div class="container dark-grey-text mt-3">
     <h2 class="wow fadeIn">Product Detail</h2>
-    <a href="" class="btn btn-yellow text-center mb-4 wow fadeIn">Back</a>
+    <a href="{{ url('/user/catalog') }}" class="btn btn-yellow text-center mb-4 wow fadeIn">Back</a>
 
     @if (session('status'))
       <div class="alert alert-success">
@@ -17,7 +17,7 @@
 
         <!--Grid column-->
         <div class="col-md-3 mb-4">
-          <img src="{{ asset('img/cover/Bumi Manusia.jpg') }}" class="img-fluid" alt="Book Cover">
+          <img src="{{ asset('img/cover/Bumi Manusia.jpg') }}" class="img-fluid" alt="Cover">
         </div>
         <!--Grid column-->
 
@@ -27,25 +27,25 @@
           <!--Content-->
           <div class="p-4">
 
-            <p class="lead font-weight-bold">Bumi Manusia</p>
+            <p class="lead font-weight-bold">{{$book->title}}</p>
 
             <table class="table table-borderless table-sm table-hover">
               <tbody>
                 <tr>
                   <th scope="row">Author</th>
-                  <td>Pramoedya Ananta Toer</td>
+                  <td>{{$book->author}}</td>
                 </tr>
                 <tr>
                   <th scope="row">Location</th>
-                  <td>Lokasi</td>
+                  <td>{{$book->location}}</td>
                 </tr>
                 <tr>
                   <th scope="row">Publisher</th>
-                  <td>Hasta Mitra</td>
+                  <td>{{$book->publisher}}</td>
                 </tr>
                 <tr>
                   <th scope="row">Print Year</th>
-                  <td>1980</td>
+                  <td>{{$book->print_year}}</td>
                 </tr>
               </tbody>
             </table>

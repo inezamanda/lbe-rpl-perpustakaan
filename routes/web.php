@@ -25,10 +25,10 @@ Auth::routes();
 // Route::get('/user/catalog', 'HomeController@catalogUser')->middleware('onlyOrdinaryUser');
 // Route::get('/admin/member', 'HomeController@memberAdmin')->middleware('onlyAdmin');
 
-Route::group(['middleware' => 'onlyOrdinaryUser'], function () {
-    Route::get('user/index', 'PerpusController@dashboardUser')->name('user.index');
-    Route::get('user/catalog', 'PerpusController@catalogUser')->name('user.catalog');
-    Route::get('{id}', 'PerpusController@userShowBook')->name('user.show');
+Route::group(['prefix' => 'user','middleware' => 'onlyOrdinaryUser'], function () {
+    Route::get('index', 'PerpusController@dashboardUser')->name('user.index');
+    Route::get('catalog', 'PerpusController@catalogUser')->name('user.catalog');
+    Route::get('{id}', 'PerpusController@userShowBook')->name('user.showBook');
 });
 
 // Route::group(['middleware' => 'onlyAdmin'], function () {
