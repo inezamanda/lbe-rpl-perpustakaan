@@ -31,12 +31,27 @@ class PerpusController extends Controller
 
     public function dashboardAdmin()
     {
-        return view('admin.index');
+        $user_id = Auth::user()->id;
+        $userBooks = Perpus::all();
+        $status = 0;
+        if(count($userBooks) > 0)
+        {
+            $status = 1;
+        }        
+        return view('admin.index',[
+            'status' => $status,
+            'books' => $userBooks,
+        ]);
     }
 
     public function dashboardUser()
     {
-        return view('user.index');
+        $user_id = Auth::user()->id;
+        $userBooks = Perpus::all();
+        $status = 0;   
+        return view('user.index',[
+            'books' => $userBooks,
+        ]);
     }
 
     public function catalogAdmin()
