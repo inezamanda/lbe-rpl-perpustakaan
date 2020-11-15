@@ -102,4 +102,12 @@ class PerpusController extends Controller
             'book' => $book,
         ]);
     }
+
+    public function usershowBook($id)
+    {
+        $book = Perpus::findOrFail($id);
+        return view('user.showBook',[
+            'book' => $book,
+        ]);
+    }
 }

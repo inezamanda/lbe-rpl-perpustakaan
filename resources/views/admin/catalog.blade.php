@@ -79,34 +79,56 @@
   <main class="main-container">
     <h2 class="wow fadeIn">Catalogue</h2>
     <a href="{{ url('/admin/create') }}" class="btn btn-amber text-center mb-4 wow fadeIn">Add new book</a>
-    @if (session('status'))
-        <div class="alert alert-success" role="alert">
-            {{ session('status') }}
-        </div>
-    @endif
+
     <!--Section: Products v.3-->
     <section class="text-center mb-4">
-    @if ($status ?? '')
-    <div class="row row-cols-4 mx-4">
-      @foreach ($books as $book)
-        <div class="d-flex">
-          <div class="card m-3" style="width: 18rem;">
-           <div class="card-body">
-            <h5 class="card-title">{{$book->title}}</h5>
-              <!-- <p>{{$book->author}}</p>
-              <p>{{$book->location}}</p>
-              <p>{{$book->publisher}}</p> -->
-              <p>{{$book->print_year}}</p>
-              <a href="{{route('admin.edit',['id' => $book->id])}}" class="btn btn-info btn-sm">Edit</a>
-              a href="{{route('admin.delete',['id' => $book->id])}}" class="btn btn-danger btn-sm">Delete</a>
-              a href="{{route('admin.show',['id' => $book->id])}}" class="btn btn-warning btn-sm">Show Detail</a>
+
+      <!--Grid row-->
+      <div class="row wow fadeIn">
+        
+            
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4">
+          @if ($status ?? '')
+            @foreach ($books as $book)
+            <!--Card-->
+            <div class="card">
+
+              <!--Card image-->
+              <div class="view overlay">
+                <img src="{{$admin->image_url}}" class="card-img-top px-2 pt-2" alt="Book Title">
+                <a href=" {{route('admin.show',['id' => $book->id])}} ">
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+              <!--Card image-->
+
+              <!--Card content-->
+              <div class="card-body text-center">
+                <!--Category & Title-->
+                <a href=" {{route('admin.show',['id' => $book->id])}} " class="grey-text">
+                  <h5>{{$book->author}}</h5>
+                </a>
+                <h5>
+                  <strong>
+                    <a href=" {{route('admin.show',['id' => $book->id])}} " class="dark-grey-text">{{$book->title}}</a>
+                  </strong>
+                </h5>
+
+              </div>
+              <!--Card content-->
+
             </div>
+            <!--Card-->
+            @endforeach
+          @else
+          @endif
           </div>
-        </div>
-      @endforeach
-    </div>
-    @else
-    @endif
+          <!--Grid column-->
+
+
+      </div>
+
     </section>
     <!--Section: Products v.3-->
 
