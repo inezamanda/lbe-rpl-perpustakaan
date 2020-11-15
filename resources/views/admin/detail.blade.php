@@ -102,7 +102,7 @@
           <!--Content-->
           <div class="p-4">
 
-            <p class="lead font-weight-bold">$book->title</p>
+            <p class="lead font-weight-bold">{{$book->title<}}/p>
 
             <table class="table table-borderless table-sm table-hover">
               <tbody>
