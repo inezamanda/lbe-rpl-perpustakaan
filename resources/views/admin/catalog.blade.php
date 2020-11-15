@@ -96,7 +96,7 @@
 
               <!--Card image-->
               <div class="view overlay">
-                <img src="{{$admin->image_url}}" class="card-img-top px-2 pt-2" alt="Book Title">
+                <img src="{{asset('img/cover/Bumi Manusia.jpg')}}" class="card-img-top px-2 pt-2" alt="Book Title">
                 <a href=" {{route('admin.show',['id' => $book->id])}} ">
                   <div class="mask rgba-white-slight"></div>
                 </a>

@@ -21,7 +21,7 @@
             <!--Card image-->
             <div class="view overlay">
               <img src="{{asset('img/cover/Bumi Manusia.jpg')}}" class="card-img-top px-2 pt-2" alt="Book Title">
-              <a href=" {{route('admin.showBook',['id' => $book->id])}} ">
+              <a href=" {{route('user.showBook',['id' => $book->id])}} ">
                 <div class="mask rgba-white-slight"></div>
               </a>
             </div>

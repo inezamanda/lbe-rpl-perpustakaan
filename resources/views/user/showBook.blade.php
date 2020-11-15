@@ -3,7 +3,7 @@
 @section('content')
   <div class="container dark-grey-text mt-3">
     <h2 class="wow fadeIn">Product Detail</h2>
-    <a href="" class="btn btn-yellow text-center mb-4 wow fadeIn">Back</a>
+    <a href="{{ url('/user/catalog') }}" class="btn btn-yellow text-center mb-4 wow fadeIn">Back</a>
 
     @if (session('status'))
       <div class="alert alert-success">
