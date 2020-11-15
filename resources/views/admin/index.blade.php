@@ -13,7 +13,7 @@
                             <p>{{$book->print_year}}</p>
                             <a href="{{route('admin.edit',['id' => $book->id])}}" class="btn btn-info btn-sm">Edit</a>
                             <a href="{{route('admin.delete',['id' => $book->id])}}" class="btn btn-danger btn-sm">Delete</a>
-                            <a href="{{route('admin.show',['id' => $book->id])}}" class="btn btn-warning btn-sm">Show Detail</a>
+                            <a href="{{route('admin.detail',['id' => $book->id])}}" class="btn btn-warning btn-sm">Show Detail</a>
                         </div>
                     </div>
                 </div>
